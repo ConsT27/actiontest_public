@@ -6,12 +6,14 @@ on:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     name: Build Canary
     if: github.event.issue.pull_request && contains(github.event.comment.body, '!canary')
     # 这里需要定义 build 作业的具体步骤
     steps:
-      -name: a
-       run: echo gogo
+      - name: aa
+        run: |
+         echo gogo
 
   exec:
     name: Release Canary
